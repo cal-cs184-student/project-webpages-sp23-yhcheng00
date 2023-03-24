@@ -1,7 +1,670 @@
-<html>
-	<head>
-	</head>
-	<body>
-		Project 3-2 here
-	</body>
-</html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Project 3</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="500ffac0-d8b0-43c3-b5be-f41a5df5a94d" class="page sans"><header><h1 class="page-title">Project 3</h1></header><div class="page-body"><p id="0e6c8db9-9445-46c7-a486-aed9ea54a7a9" class="">Yu Heng Cheng</p><p id="2c3459d2-3eb9-460d-b0e1-aeffd2e11882" class=""><a href="https://cal-cs184-student.github.io/project-webpages-sp23-yhcheng00/"><strong>https://cal-cs184-student.github.io/project-webpages-sp23-yhcheng00/</strong></a></p><h1 id="d081ba82-ced8-4e4d-97fa-d2f95bfdc0ab" class="">Overview</h1><p id="b2db96fd-1142-45ea-a26c-a737573f4f2b" class="">Through implementing reflection and refraction and weighting their application with the Fresnel factor, I was able to arrive at a rendering solution for glass and mirrors. Unlike the diffuse materials, the incoming light ray direction is deterministic and thus only requires a random aspect for determining reflection or refraction using the Fresnel factor as the probability. With this knowledge, I was able to more easily implement microfacets, which are like reflection but with nonuniform normal vectors that require implementation of yet another probability distribution to sample a normal vector as well. The implementation of this was mostly mathematical and straightforward application of code to the underlying equations, but I was stymied for a while by accidentally implementing integer division where I intended to use floating division, resulting in taking the floor of the result and sending my calculated probability distribution function to 0.</p><h1 id="707e8517-5d53-41ae-9281-92def59e7caf" class="">Part 1</h1><p id="d2117d4e-8ac4-4037-bdcc-60d66a7d3f6b" class="">This part of the project involved implementing reflection and refraction of rays and combining the two weighted by the Fresnel factor to arrive at a method of rendering glass, which has both elements. Reflection proved trivially simple: Simply reverse the x and y directions and keep z the same to sample an appropriate ωi to produce a ray traveling in the opposite x-y direction but same z. The probability distribution function is just 1.0, since a reflected ray can only come from one origin ray. Refraction involved implementing Snell’s law and using spherical coordinates to derive the respective ωi when it passes through the material instead and refracts, either changing direction closer to the normal upon exiting the material or further when entering. This is reflected by η being <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><msub><mi>i</mi><mrow><mi>r</mi><mi>e</mi><mi>f</mi><mi>r</mi><mi>a</mi><mi>c</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi></mrow></msub></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{i_{refraction}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.3931879999999999em;vertical-align:-0.5480799999999999em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3487714285714287em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">re</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29011428571428566em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5480799999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><span>﻿</span></span> when entering and <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.13.2/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mrow><mi>r</mi><mi>e</mi><mi>f</mi><mi>r</mi><mi>a</mi><mi>c</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">i_{refraction}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9456279999999999em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">i</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">re</span><span class="mord mathnormal mtight" style="margin-right:0.10764em;">f</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> when exiting, except in the case of total internal reflection, which results from an impossible θ’. I render glass by computing the reflection coefficient based on the angle with the normal and index of refraction, and use this as the probability that the ray will reflect or refract (an angle that is impossible to refract is reflected), and return a value f derived from reflectance or transmittance as such for the other rendering functions.</p><div id="978aa0bd-9f65-4fff-887b-b74e8d788122" class="column-list"><div id="e52ea552-ba16-44cb-894e-99b329ada742" style="width:50%" class="column"><figure id="1b0033d1-1038-4505-b4c7-603c5c62a776" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled.png"><img style="width:480px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled.png"/></a><figcaption>CBspheres.dae rendered with max_ray_depth of 0. Only the illumination arriving at the camera directly from the ceiling light is visible. This stage only checks for direct emission of light.</figcaption></figure></div><div id="3316aea6-852a-425a-a760-ece7ae37132d" style="width:50%" class="column"><figure id="404c5b53-d0ad-482b-a6b2-b60cecbbbce1" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%201.png"><img style="width:480px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%201.png"/></a><figcaption>CBspheres.dae rendered with max_ray_depth of 1. With one bounce, the light reflected directly from the walls and the spheres are visible. The ceiling is not since the light does not directly shine on it.</figcaption></figure></div></div><div id="ee308cf2-0103-4bf8-9447-b4a83aa95637" class="column-list"><div id="35b6620f-37b0-4877-89b9-6b720d5f3e93" style="width:50%" class="column"><figure id="66c5e12e-cb83-4a14-acd7-b51c90594141" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%202.png"><img style="width:480px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%202.png"/></a><figcaption>CBspheres.dae rendered with max_ray_depth of 2. The ceiling is now lit up by indirect illumination, and a mirror image can be seen in the sphere, produced by rays arriving at the camera that were reflected at the surface from the other elements in the room. Although some reflection of the floor and walls is visible in the glass sphere, the majority of light from the walls is undergoing refraction and still inside the ball. A small sliver of light that was refracted from the direct light overhead is visible.</figcaption></figure></div><div id="d9179cfa-d9fb-4e22-a963-e5cac1dfce9e" style="width:50%" class="column"><figure id="9a664a05-0fbf-4a37-ad6a-29e18beb8fd5" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%203.png"><img style="width:480px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%203.png"/></a><figcaption>CBspheres.dae rendered with max_ray_depth of 3. Light from the walls that refracted through the glass sphere has exited and is now visible. A bright spot of refracted direct light is now visible underneath the glass sphere as the third bounce brings it to the camera. The reflection in the mirror ball now contains indirect illumination from the ceiling.</figcaption></figure></div></div><div id="48dcc657-acf5-4400-83d9-aa649be98682" class="column-list"><div id="b25b9c19-1d37-4384-9390-3b9cad0dff18" style="width:50%" class="column"><figure id="a1c8436e-2d0a-4908-af50-a7646f140932" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%204.png"><img style="width:480px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%204.png"/></a><figcaption>CBspheres.dae rendered with max_ray_depth of 4. A bright spot appears in the bottom corner of the blue wall as the intense light from the circle directly under the glass ball bounces into that spot and into the camera. Some of that light also reflects off the glass and shows up on the glass ball itself.</figcaption></figure></div><div id="36311b81-4ce6-4d9d-9bbc-97c5d8f1324b" style="width:50%" class="column"><figure id="20c5a4af-7eb2-4a9e-9408-57d2c564e17e" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%205.png"><img style="width:480px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%205.png"/></a><figcaption>CBspheres.dae rendered with max_ray_depth of 5. Changes between this and the previous stage are essentially negligible, though the bright spot on the glass ball is now visible in the mirror.</figcaption></figure></div></div><figure id="87791878-a760-4ff5-a1b6-886ea08c719a" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%206.png"><img style="width:480px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%206.png"/></a><figcaption>CBspheres.dae rendered with max_ray_depth of 100. Differences between this render and the previous are negligible, as the image has mostly stabilized and virtually no rays are left due to Russian Roulette.</figcaption></figure><h1 id="b9e0535e-d291-478d-af9d-a6e91c3d6096" class="">Part 2</h1><p id="9529a19d-c2a3-4fe4-85fa-b5d0333df1a2" class="">This part of the project involved implementing microfacets. Microfacets are almost an extension of reflective surfaces, but unlike the mirror sphere implemented in Part 1, microfacets are rough on a macro scale. On a micro scale, they reflect light like mirrors, but across very small elements, each with their own normal vector. The distribution of the normal vectors is a characteristic of that material. Hence, we implement the Beckman distribution, using parameters intrinsic to the surface such as roughness, to model this. Furthermore, in this particular case we implement microfacets for conductors, which have wavelength-dependent Fresnel terms and thus do not follow the same terms used in Part 1. Since this renderer uses RGB values, I calculated the Fresnel terms only for red, green, and blue and applied it for its respective color. In order to converge the result to a less noisy state more quickly, I implemented importance sampling appropriate for the Beckmann distribution that would more accurately target the distribution and sample accordingly. This all culminates in the sample_f() and f() function, which are well equipped to sample an appropriate ωi from ωo and calculate an f based on the Fresnel term, shadowing-masking term, and normal distribution function.</p><figure id="52868880-9571-4306-8655-1178b24c54bd" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%207.png"><img style="width:480px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%207.png"/></a><figcaption>CBdragon_microfacet_au.dae with α set to 0.005. Note that the surface is relatively smooth and the reflection from the walls is discretely visible. The dragon looks glossy overall.</figcaption></figure><figure id="32db7e71-cbf0-4d98-b684-573a9cd0c6b0" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%208.png"><img style="width:480px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%208.png"/></a><figcaption>CBdragon_microfacet_au.dae with α set to 0.05. While still smooth, reflected regions are less discrete. The ceiling light is distributed more evenly as the roughness increase causes more regions to reflect the radiance from the ceiling light directly to the camera. Greater noise results from this more chaotic distribution of light scattered about the room.</figcaption></figure><figure id="cc3d31ed-e234-40f5-968d-7eabb406b082" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%209.png"><img style="width:480px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%209.png"/></a><figcaption>CBdragon_microfacet_au.dae with α set to 0.25. The effects described in the previous stage are even more pronounced, with the dragon no longer seeming glossy and taking on an eroded texture. The reflected noise light about the room is now diffuse enough to be less visible.</figcaption></figure><figure id="e901edba-05a1-45be-af00-90f22126ece3" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%2010.png"><img style="width:720px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%2010.png"/></a><figcaption>CBdragon_microfacet_au.dae with α set to 0.5. At this point the dragon looks almost like a diffuse object, although it retains its shiny quality that is expected of a conductor.</figcaption></figure><figure id="86e7b917-0adf-4a05-afe4-973e8d3b9c7b" class="image" style="text-align:center"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%2011.png"><img style="width:720px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%2011.png"/></a><figcaption>CBbunny.dae with cosine hemisphere sampling. The use of cosine hemisphere results in sampling unlikely rays that do not match the distribution, causing samples that may not contribute much information and resulting in black patches on the bunny.</figcaption></figure><figure id="7ac9f03a-c9fd-4b8b-b705-6ecd6a3b96b0" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%2012.png"><img style="width:720px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%2012.png"/></a><figcaption>CBbunny.dae with importance sampling. The use of proper importance sampling causes it to converge much faster with the same settings, causing the rabbit to look much more regular in appearance.</figcaption></figure><figure id="6d51f129-678d-4d04-8e48-3d055524f30c" class="image"><a href="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%2013.png"><img style="width:720px" src="Project%203%20500ffac0d8b043c3b5bef41a5df5a94d/Untitled%2013.png"/></a><figcaption>Depicted is CBspheres_microfacet_brass.dae, with modified η and k values to match the properties of brass. The result is the metallic brown-yellow hue that is characteristic of the metal.</figcaption></figure><p id="23c6361c-6a70-4df9-9233-11d634a8c21e" class="">
+</p></div></article></body></html>
