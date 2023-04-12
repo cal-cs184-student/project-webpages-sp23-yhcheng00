@@ -1,7 +1,672 @@
-<html>
-	<head>
-	</head>
-	<body>
-		Project 4 here
-	</body>
-</html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Project 4</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="194dbe5c-66f0-4a2f-9c58-4fb3c0fa41f9" class="page sans"><header><h1 class="page-title">Project 4</h1></header><div class="page-body"><p id="d29ee0a3-3487-4617-b98d-ef3ea923cfb6" class="">Yu Heng Cheng</p><p id="26180eb5-6c95-4c28-ae2f-69aa176aee6a" class=""><a href="https://cal-cs184-student.github.io/project-webpages-sp23-yhcheng00/"><strong>https://cal-cs184-student.github.io/project-webpages-sp23-yhcheng00/</strong></a></p><h1 id="637889c3-d8b7-4061-90c3-56ff35e08f2a" class="">Overview</h1><p id="ddf94497-baa4-484f-b752-7363dfa7af6b" class="">This project focused on physical simulation, with a focus on applying physical constraints and forces to meshes. Since they can be represented as flexible and pliable meshes with dramatic and visible motions, cloths make excellent simulation subjects. The first part involved generating a mesh that would be sufficient to represent the cloth. Edges of the mesh were represented by springs. The cloth was connected by structural springs betwen adjacent vertices, as well as shearing springs on diagonals and bending springs that connected every other vertex. In this way the cloth could resist deformation from stretching, shearing, and bending. To avoid unrealistic deformations, springs were not allowed to deform more than 10%. In order to advance the simulation, I implemented Verlet integration. Though as an explicit integration method it was susceptible to accumulated error, it was reasonable enough for a visual demonstration. With small timesteps, Verlet was a simple application of typical forward kinematics, but with the addition of a damping factor multipled by the velocity term. Furthermore, the velocity term is derived from the difference between the current position and last known position. The damping allows the system to lose energy as in the real world, but is less sophisticated as it acts equally without regard for inertial forces (for example, a free falling object should not be damped, but will be under this scheme). For yet more realistic simulation, I implemented collision with objects, such as spheres and planes. The approach for a sphere is simply to test if a point on the cloth intersects the sphere, and then “nudge” it back to the right shape. This involves calculating the nearest point on the sphere itself to the interfering point, and then creating a vector from the last position to this point, scaling it by friction to arrive at the final point. Planes are similar in concept, but instead, the objective is to prevent points from switching sides. If the dot product of the vector from the plane’s prescribed point to the position and the plane normal is positive, then it is on the “positive” side of the plane. We can do nothing unless during an iteration, the dot product shifts to be the opposite of the dot product between the last position and normal. For self-collisions, we employ a hash to ensure we only test for collisions in the immediate 3D vicinity- I used a polynomial hash for reasonable performance while keeping the hash simple and quick. For every simulation step, the program regenerates the hash table and calculates potential collisions (if two vertices become closer than 2 * thickness they must be moved away) but the program only checks each point against others within its hash bucket for potential collisions. While implementing shaders proved to be a bit challenging due to the unfamiliar syntax, GLSL was ultimately quite simple due to its very specialized programming paradigm of matrix operations.</p><h1 id="1d60c594-ca03-4b6d-adca-0b761a6c3419" class="">Part 1</h1><figure id="04ac48c2-5e2e-46ee-981b-9a165e21be00" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled.png"/></a><figcaption>The wireframe without any shearing constraints.</figcaption></figure><figure id="606c248f-bf0d-418c-be20-3c7b21e0c052" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%201.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%201.png"/></a><figcaption>The wireframe with only shearing constraints.</figcaption></figure><figure id="10206112-8e75-4442-8a90-09d986c4f44f" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%202.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%202.png"/></a><figcaption>The wireframe with all constraints.</figcaption></figure><h1 id="209a43be-8563-46bd-89bc-c2a47cdb9c6b" class="">Part 2</h1><p id="6ad71e89-b887-43de-98ab-7356648c22bd" class="">With a very low ks, the cloth seems to behave like a very thin, yet dense sheet, and the top sagging fold flattens out into many smaller folds. It pivots more cleanly, almost like a pendulum, as the other spring elements do little to pull it back into its constraints. With a high ks, parts closer to the pins resist initial deformation during bending and form a more pronounced top bend that sags less.</p><figure id="f0616661-1f86-4b0f-873e-9897adab5ea7" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%203.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%203.png"/></a><figcaption>ks = 10 N/m</figcaption></figure><figure id="a4d2c4eb-9a84-44eb-9b55-bff35a30c7f5" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%204.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%204.png"/></a><figcaption>ks = 100000 N/m</figcaption></figure><p id="955e008d-bc3c-4722-b692-784e721b7ae3" class="">Having low and high density appears to act similarly to having high and low ks respectively. This makes sense since at low density, the resulting accelerations from the spring force will be much higher due to Newton’s Second Law, and at high density the accelerations will be lower. This effect is similar to what we expect for low values of ks, since a low value causes a low spring force and therefore low acceleration, and vice versa.</p><p id="dc04232b-5e1a-4da2-a72d-fceadabc5cc3" class="">Although higher damping greatly slows down the simulation (even slowing down gravity, as it is a more primitive damping scheme), it does not affect the final state since it will converge on the same state (only affects how quickly it gets there). </p><p id="a6693d31-7636-4b3b-8f36-bf97f44a847b" class="">
+</p><figure id="6a65bd9a-beae-451e-b4e2-2a9a5c55d954" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%205.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%205.png"/></a><figcaption>The cloth depicted with the default parameters in its final resting state.</figcaption></figure><h1 id="8f3bd28e-ce05-4357-a2fd-6ba732e360bb" class="">Part 3</h1><p id="1fc6bef2-c403-4818-88d1-dc53e108122e" class="">At lower levels of spring stiffness, the cloth tends to conform more to the sphere’s shape and be stretched by gravity, since the springs offer less resistance in bending to the shape and in structural stiffness against gravity. Thus for ks = 500 N/m, the cloth stays tangent to the sphere over more of it, and hangs significantly lower. The opposite happens at higher levels of spring stiffness, with the sphere being barely recognizable at ks = 50,000 N/m as the cloth barely bends to its shape, instead flaring out at steep angles.</p><figure id="cd944980-32a8-41ae-ac5c-b0b83b7bdf6a" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%206.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%206.png"/></a><figcaption>The cloth draped over a sphere with ks = 5000 N/m.</figcaption></figure><figure id="b4f133c4-d544-44ce-9144-e605229b3383" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%207.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%207.png"/></a><figcaption>The cloth draped over a sphere with ks = 500 N/m.</figcaption></figure><figure id="f157738f-6702-4272-8c42-e90ccbbbf8dc" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%208.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%208.png"/></a><figcaption>The cloth draped over a sphere with ks = 50000 N/m.</figcaption></figure><figure id="572fe6e1-a2ca-4908-b70d-1d8263faeebe" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%209.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%209.png"/></a><figcaption>The cloth resting on a plane.</figcaption></figure><h1 id="7e98fafe-e7db-4ab6-a190-c425a4a8dfcf" class="">Part 4</h1><figure id="7f28c0e2-8db9-4aee-9d4c-206311bfc01f" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2010.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2010.png"/></a><figcaption>Initial collision</figcaption></figure><figure id="9a29a270-0966-476c-94fb-d48cf855f41c" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2011.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2011.png"/></a><figcaption>The cloth begins to spread out after folding over itself.</figcaption></figure><figure id="67fe4ed6-90cf-4e6d-bcb6-566d1f928b00" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2012.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2012.png"/></a><figcaption>The final resting state with default settings.</figcaption></figure><p id="92056f1b-6625-4548-9218-a1094068b2dd" class="">At lower densities, the cloth takes much longer to crumple as gravitational forces are smaller due to less mass, but spring forces remain the same, being proportional to distance. Since spring forces are more powerful, the cloth forms gentler curves as it crumples as well, unable to bend as tightly due to the weaker gravity. At high densities, the simulation actually fails (the cloth falls through due to friction weakening the correction of the cloth as it falls down).</p><div id="f64cfc1c-5b08-4dc0-9597-b025a539d4a2" class="column-list"><div id="99610a73-5618-4556-acec-d0f88cbb606c" style="width:50%" class="column"><figure id="b1bc5998-0408-4d16-8a6e-cc0f44f5dbd3" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2013.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2013.png"/></a><figcaption>Mid-crumple for density = 1 g/cm^2.</figcaption></figure></div><div id="0fb2fddb-925f-435c-868e-654f6cba9d37" style="width:50%" class="column"><figure id="c2ef9fdc-e4fc-4c07-8ec2-3c7b28fc746d" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2014.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2014.png"/></a><figcaption>Final resting configuration for density = 1 g/cm^2.</figcaption></figure></div></div><p id="6e5e0ec7-0334-4ba7-ac12-4b8ffc6b2b3b" class="">At high stiffness tends to jerk violently and form large sweeping motions, but like lower densities, it bends less readily and forms gentler curves.</p><div id="dfc68e66-806f-4714-a576-688531d5ad64" class="column-list"><div id="5db340e7-6aa7-4cbb-94d0-7c7293d5bcff" style="width:50%" class="column"><figure id="c6fd8a50-cf00-4ce1-b8be-84edf6c17874" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2015.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2015.png"/></a><figcaption>Mid-crumple for ks = 50000 N/m</figcaption></figure></div><div id="94c3d40f-9530-40b5-986c-853571ec8de4" style="width:50%" class="column"><figure id="e979a421-a8ea-4cb6-bb0c-8145540ac22c" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2016.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2016.png"/></a><figcaption>Final resting configuration for ks = 50000 N/m. Notice the similarity to the low density configuration.</figcaption></figure></div></div><p id="cdf06403-5721-4e8e-9200-7fca52327f0a" class="">Just as with high densities, at low stiffness the cloth simply falls through the plane and cannot be directly simulated under the current settings.</p><h1 id="7025653c-59d9-45bd-86a0-29d68279e7b5" class="">Part 5</h1><p id="a63cc5b5-66ce-4517-a758-cbc2cbe56008" class="">A shader program offloads much of the parallelizable graphics computation to the GPU. They use languages such as GLSL, designed expressly for parallelization of computation by favoring vectorized operations and the use of uniform instances and variables to minimize dependency in separate operations. The vertex shader transforms the vertex in the world space to the camera space, including its normal and associated lighting properties, for interpolation. The fragment shader then performs sampling that yields the result shown by a display.</p><p id="bd0b0ac2-5b6e-4ca9-a1a4-fe1a377771fd" class="">The Blinn-Phong model superimposes three primary components that contribute to resultant lighting on each other to achieve realistic rendering. An ambient component represents a generalized constant that fills in for illumination neglected by the model and unrealistically dark shadows, and is generally representative of the lighting from far away and from many different angles. It is applied uniformly. The diffuse component is composed of light that scatters uniformly, and is thus independent of viewing angle. However, the amount of light is still proportional to the cosine between the normal of the surface and incident light, which causes different radiance when viewing parts of an object at different angles. The specular component represents elements of light for which viewing angle matters: This component is multipled by the cosine of the bisector of the light entrance and exit angle with the normal, ensuring light is at full intensity if perfectly reflected to the camera, but less otherwise. This cosine factor is taken to the power of p, a coefficient that if increased, narrows the reflection lobe and causes it to only reflect very direct rays in significant quantities.</p><h2 id="a409cb58-7957-44ec-be41-7f51abbaa1f3" class="">Blinn-Phong</h2><div id="112ee30a-e35d-46e9-89b4-b7edc7350bb8" class="column-list"><div id="b67143c7-dfc4-4cdd-a221-5bcb4a2251e3" style="width:50%" class="column"><figure id="d20794b1-8d18-4581-8178-f61c6c1f660b" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2017.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2017.png"/></a><figcaption>The ambient component of the Blinn-Phong model. Note that this ambient light is red.</figcaption></figure></div><div id="0ce94f30-7f72-490a-bc65-d735b07479b7" style="width:50%" class="column"><figure id="0c15c5e1-45d9-4ac6-8d54-12b3bda36e83" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2018.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2018.png"/></a><figcaption>The diffuse component of the Blinn-Phong model. Light is more evenly distributed as it is independent of viewing angle.</figcaption></figure></div></div><div id="7abffb51-067b-40d0-85e4-0b724d9d974c" class="column-list"><div id="d21f0d5e-4958-4c74-ab1c-3059709dde08" style="width:50%" class="column"><figure id="8f7a2b51-e0c0-4c73-94d5-55f674c63c08" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2019.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2019.png"/></a><figcaption>The specular component of the Blinn-Phong model. The p value is set to 32, resulting in sharp reflections.</figcaption></figure><h2 id="6a334e1d-867d-4490-89b2-edecc184e8ef" class="">Texture</h2></div><div id="6eca275b-119c-491c-bf58-999b8eb83127" style="width:50%" class="column"><figure id="08fc1af5-d108-4be6-8e18-57b971ef78cd" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2020.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2020.png"/></a><figcaption>The complete Blinn-Phong model.</figcaption></figure><p id="e392c0ab-efc3-426f-a918-5d817bcd55a2" class="">
+</p><p id="7f4d662f-f40d-453a-bbb6-1eb6b8d51d1f" class="">
+</p></div></div><figure id="89442918-1ab6-4636-bd11-928d6ada7126" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2021.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2021.png"/></a><figcaption>A custom texture featuring Mari from the indie video game OMORI.</figcaption></figure><h2 id="ea2dcee3-debb-4d2b-a728-70acbf5a57ac" class="">Bump and Displacement</h2><p id="1d4db3c5-da0f-4938-90ff-4b3a95532f1f" class="">Bump gives a strong illusion of a surface finish from simulating what are essentially microfacets. The variation in the normal vector based on the underlying texture produces shading patterns that look quite convincing. However, the silhouette remains the same, so it works less well for exceedingly rough surfaces where one would expect changes in the shape. Displacement, on the other hand, actually changes the position of the vertices, creating visible crests and valleys and enhancing the illusion in addition to the modification of vertex normals. The result is more convincing up close, especially near the edges of the object where the silhouette becomes more important.</p><figure id="dbf3a89c-241f-4ca3-98c8-e45ee7760c6a" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2022.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2022.png"/></a><figcaption>Bump mapping shown on the sphere.</figcaption></figure><figure id="f6a32e9d-acca-4756-bc0b-4605f1d4f009" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2023.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2023.png"/></a><figcaption>Bump mapping shown on the cloth.</figcaption></figure><figure id="9ba38fc5-4596-4902-b8fb-1e514471fdab" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2024.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2024.png"/></a><figcaption>Displacement mapping on the sphere.</figcaption></figure><p id="2848634e-a4a0-4ad5-baaf-b1a84851bd3a" class="">Although displacement mapping is in principle more realistic, it suffers greatly with a coarse mesh. While the two bump mapping spheres at different resolutions are mostly identical, the displacement mapping differs severly. The small number of vertices results in only a handful of them being displaced, and bulging out severely. However, for a finer mesh, it excels at creating a coarse silhouette.</p><div id="2b81f22a-19cb-46ff-afd1-f29fd847a4a4" class="column-list"><div id="d4707285-bc03-46a6-8927-04e52b56060b" style="width:50%" class="column"><figure id="6cdca1d6-8df2-4da9-9ff5-a7723e585b0b" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2025.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2025.png"/></a><figcaption>Bump mapping on the sphere at resolution of 16.</figcaption></figure></div><div id="29287911-6b08-4c0c-896f-f81515a1f3d0" style="width:50%" class="column"><figure id="fa67aa2e-5c61-494b-b88b-f60f4052d5f5" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2026.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2026.png"/></a><figcaption>Displacement mapping on the sphere at resolution of 16.</figcaption></figure></div></div><div id="aa2053fa-1af2-43f8-8d35-31075367a197" class="column-list"><div id="4a790aed-91b5-4b93-ad6b-3f97045a0752" style="width:50%" class="column"><figure id="a2948b9c-6bfd-41f1-bd59-010513812a61" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2027.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2027.png"/></a><figcaption>Bump mapping on the sphere at resolution of 128.</figcaption></figure></div><div id="c91b025b-1491-4849-a235-d3362dd0e5ee" style="width:50%" class="column"><figure id="ceaf7799-a6f8-4f20-9d3e-e01623582bf3" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2028.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2028.png"/></a><figcaption>Displacement mapping on the sphere at resolution of 128.</figcaption></figure></div></div><h2 id="a58f8530-0791-4804-b346-6fd8ddf766f4" class="">Environment Map</h2><figure id="ccae6bc0-bcdc-4533-a142-810fb7b6bd89" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2029.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2029.png"/></a><figcaption>A mirror environment map on the cloth.</figcaption></figure><figure id="47912652-f020-480e-b289-83588719f485" class="image"><a href="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2030.png"><img style="width:1026px" src="Project%204%20194dbe5c66f04a2f9c584fb3c0fa41f9/Untitled%2030.png"/></a><figcaption>A mirror environment map on the sphere.</figcaption></figure></div></article></body></html>
